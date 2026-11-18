@@ -9,8 +9,7 @@ class Review(models.Model):
         default=5,
         validators=[MinValueValidator(1), MaxValueValidator(5)]
     )
-    device_id = models.CharField('ID устройства', max_length=64, unique=True,
-                                 null=True, blank=True)
+    device_id = models.CharField('ID устройства', max_length=64, unique=True)
     text = models.TextField('Текст отзыва')
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
 
