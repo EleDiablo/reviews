@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Отзывы{% endblock %}</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #2b2d42;
+        }
+        .card-modern {
+            border: none;
+            border-radius: 1.25rem;
+            box-shadow: 0 12px 32px rgba(31, 38, 135, 0.08);
+            background: #ffffff;
+        }
+        .form-control {
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid #dee2e6;
+            background-color: #f8f9fa;
+            transition: all 0.2s ease;
+        }
+        .form-control:focus {
+            background-color: #ffffff;
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.12);
+        }
+        .btn-modern {
+            border-radius: 0.75rem;
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .btn-modern:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(13, 110, 253, 0.25);
+        }
+        .star-rating {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .star-rating svg.star-icon {
+            color: #dee2e6;
+            cursor: pointer;
+            transition: color 0.15s ease, transform 0.15s ease;
+        }
+        .star-rating svg.star-icon.active,
+        .star-rating svg.star-icon:hover {
+            color: #ffc107;
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+<body class="d-flex flex-column justify-content-center py-4">
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

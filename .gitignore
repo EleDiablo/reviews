@@ -1,0 +1,17 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+
+# Кэш Python и системные файлы
+__pycache__/
+*.py[cod]
+*.egg-info/
+.DS_Store
+Thumbs.db
+
+# База данных и локальные настройки
+db.sqlite3
+db_data/
+staticfiles/
+.env
