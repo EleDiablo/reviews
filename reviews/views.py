@@ -17,7 +17,8 @@ def index(request):
         review = form.save()
         response = redirect('thanks')
         response.set_cookie('device_token', review.device_id,
-                            max_age=31536000, httponly=True)
+                            max_age=31536000, httponly=True,
+                            secure=True, samesite='Lax')
         return response
     template = 'index.html'
     context = {'form': form}
